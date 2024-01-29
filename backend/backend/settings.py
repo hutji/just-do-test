@@ -32,6 +32,7 @@ INSTALLED_APPS = [
     'drf_yasg',
     'corsheaders',
     'channels',
+    'daphne',
     'api.apps.ApiConfig',
 ]
 

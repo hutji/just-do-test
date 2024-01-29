@@ -1,13 +1,13 @@
 FROM node:18
 WORKDIR /app
 
-COPY package.json package.json
-COPY package-lock.json package-lock.json
+COPY package.json yarn.lock /app/
 
-RUN npm ci
+RUN yarn install
 
 COPY . .
-RUN npm run build
-RUN npm install --global http-server
+RUN yarn build
 
-CMD ["npx", "-y", "http-server", "-p", "9000", "/app/build"]
+EXPOSE 3000
+
+CMD ["yarn", "start"]
