@@ -1,0 +1,26 @@
+[tool.poetry]
+name = "requirements"
+version = "0.1.0"
+description = ""
+authors = ["Pavel Lashkov <hutjicsgo@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+django = "^5.0.1"
+djangorestframework = "^3.14.0"
+channels-redis = "^4.2.0"
+daphne = "^4.0.0"
+djangorestframework-jwt = "^1.11.0"
+redis = "^5.0.1"
+postgres = "^4.0"
+gunicorn = "^21.2.0"
+python-dotenv = "^1.0.1"
+django-cors-headers = "^4.3.1"
+drf-yasg = "^1.21.7"
+channels = "^4.0.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
