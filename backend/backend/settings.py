@@ -20,6 +20,9 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'drf_yasg',
+    'corsheaders',
+    'channels',
     'daphne',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -28,11 +31,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'rest_framework_simplejwt',
     'rest_framework.authtoken',
-    'djoser',
-    'drf_yasg',
-    'corsheaders',
-    'channels',
     'api.apps.ApiConfig',
 ]
 
@@ -80,6 +80,7 @@ REST_FRAMEWORK = {
 
 AUTH_USER_MODEL = 'auth.User'
 
+WSGI_APPLICATION = 'backend.wsgi.application'
 
 ASGI_APPLICATION = 'backend.asgi.application'
 
