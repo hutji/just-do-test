@@ -24,8 +24,13 @@ SECRET_KEY=django-insecure-zqr&33j559wo1r7@i9$hxip-n6r(8$tvg3nm0+mw59(n896*zy
 
 Выполняем запуск:
 
+Для запуска backend
 ```bash
-sudo docker compose -f docker-compose.yml up
+sudo docker compose -f docker-compose.backned.yml up
+```
+Для запуска frontend
+```bash
+sudo docker compose -f docker-compose.frontend.yml up
 ```
 ## Документация к API
 ```
@@ -54,7 +59,8 @@ http://localhost:8000/
 В окне, где был запуск **Ctrl+С** или в другом окне:
 
 ```bash
-sudo docker compose -f docker-compose.yml down
+sudo docker compose -f docker-compose.backend.yml down
+sudo docker compose -f docker-compose.frontend.yml down
 ```
 
 ## Технологии проекта

@@ -4,16 +4,16 @@ services:
   db:
     image: postgres:13
     env_file:
-      - .env
+      - ./.env
     volumes:
       - pg_data:/var/lib/postgresql/data
 
   backend:
     build:
       context: .
-      dockerfile: backend/Dockerfile
+      dockerfile: Dockerfile
     env_file:
-      - .env
+      - ./.env
     restart: always
     volumes:
       - static:/backend_static
@@ -22,12 +22,6 @@ services:
       - db
     ports:
       - "8000:8000"
-  frontend:
-    env_file: .env
-    build: ./frontend/
-    command: cp -r /app/build/. /static/
-    volumes:
-      - static:/static
 
   nginx:
     image: nginx:1.21.3-alpine
@@ -44,8 +38,8 @@ services:
       context: .
       dockerfile: Dockerfile
     env_file:
-      - .env
-    command: ["poetry", "run", "daphne", "-b", "0.0.0.0", "-p", "8001", "backend.wsgi:application"]
+      - ./.env
+    command: ["poetry", "run", "daphne", "-b", "0.0.0.0", "-p", "8001", "backend.asgi:application"]
     depends_on:
       - backend
     ports:
