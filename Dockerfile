@@ -8,4 +8,5 @@ RUN apt-get update \
     && poetry config virtualenvs.create false \
     && poetry install
 COPY backend/ .
+ENV DJANGO_SETTINGS_MODULE=backend.settings
 CMD ["poetry", "run", "gunicorn", "--bind", "0.0.0.0:8000", "backend.wsgi:application"]
