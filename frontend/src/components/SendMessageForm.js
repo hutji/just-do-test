@@ -1,7 +1,12 @@
 import React from 'react';
 
 const SendMessageForm = () => {
-  // Реализация формы/модального окна для отправки сообщений
+  return (
+    <form>
+      <textarea placeholder="Enter your message"></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  );
 };
 
 export default SendMessageForm;
