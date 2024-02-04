@@ -10,14 +10,14 @@ services:
 
   backend:
     build:
-      context: .
+      context: ./backend/
       dockerfile: Dockerfile
     env_file:
       - ./.env
     restart: always
     volumes:
-      - static:/backend_static
-      - backend:/app/media/
+      - static:/static
+      - media:/app/media/
     depends_on:
       - db
     ports:
@@ -35,11 +35,12 @@ services:
 
   daphne:
     build:
-      context: .
+      context: ./backend/
       dockerfile: Dockerfile
     env_file:
       - ./.env
-    command: ["poetry", "run", "daphne", "-b", "0.0.0.0", "-p", "8001", "backend.asgi:application"]
+    #command: ["poetry", "run", "daphne", "-b", "0.0.0.0", "-p", "8001", "backend.asgi:application"]
+    command: ["daphne", "-b", "0.0.0.0", "-p", "8001", "backend.asgi:application"]
     depends_on:
       - backend
     ports:

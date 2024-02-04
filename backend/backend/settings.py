@@ -75,7 +75,11 @@ REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework.authentication.SessionAuthentication',
         'rest_framework_simplejwt.authentication.JWTAuthentication',
-    )
+    ),
+}
+
+SIMPLE_JWT = {
+    'AUTH_COOKIE': 'jwt', #new
 }
 
 AUTH_USER_MODEL = 'auth.User'

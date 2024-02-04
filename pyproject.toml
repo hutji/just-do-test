@@ -6,7 +6,7 @@ authors = ["Pavel Lashkov <hutjicsgo@gmail.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.12"
+python = "^3.11"
 django = "^5.0.1"
 djangorestframework = "^3.14.0"
 channels-redis = "^4.2.0"
