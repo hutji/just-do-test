@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { login, register } from '../redux/actions'; // Импортируем функции login и register
+import { login, register } from '../redux/actions';
 
 const AuthForm = () => {
   const [email, setEmail] = useState('');
@@ -8,11 +8,11 @@ const AuthForm = () => {
   const dispatch = useDispatch();
 
   const handleLogin = () => {
-    dispatch(login(email, password)); // Вызываем функцию login из actions.js
+    dispatch(login(email, password)); 
   };
 
   const handleRegister = () => {
-    dispatch(register(email, password)); // Вызываем функцию register из actions.js
+    dispatch(register(email, password));
   };
 
   return (

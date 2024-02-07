@@ -5,7 +5,6 @@ const AdminDashboard = ({ notifications, statistics }) => {
   const [recipient, setRecipient] = useState('');
 
   const handleSendNotification = () => {
-    // Logic to send notification
     console.log('Sending notification...');
   };
 

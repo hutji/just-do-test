@@ -12,13 +12,10 @@ export const loadNotifications = () => {
   };
   
   export const login = (email, password) => {
-    // Логика для авторизации пользователя
   };
   
   export const register = (email, password) => {
-    // Логика для регистрации пользователя
   };
   
   export const fetchNotifications = () => {
-    // Логика для загрузки уведомлений из API
   };

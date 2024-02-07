@@ -4,12 +4,10 @@ const initialState = {
     error: 0,
   };
   
-  // Редуктор для управления состоянием статистики
   const statisticsReducer = (state = initialState, action) => {
     switch (action.type) {
       case 'UPDATE_STATISTICS':
         return { ...state, ...action.payload };
-      // Другие кейсы при необходимости
       default:
         return state;
     }

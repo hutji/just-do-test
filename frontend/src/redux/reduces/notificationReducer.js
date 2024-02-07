@@ -4,7 +4,6 @@ const initialState = {
     error: null,
   };
   
-  // Редуктор для управления состоянием уведомлений
   const notificationReducer = (state = initialState, action) => {
     switch (action.type) {
       case 'LOAD_NOTIFICATIONS_REQUEST':
@@ -13,7 +12,6 @@ const initialState = {
         return { ...state, notifications: action.payload, loading: false };
       case 'LOAD_NOTIFICATIONS_FAILURE':
         return { ...state, error: action.payload, loading: false };
-      // Другие кейсы при необходимости
       default:
         return state;
     }
